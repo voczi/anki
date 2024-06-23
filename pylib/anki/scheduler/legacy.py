@@ -130,7 +130,7 @@ select id from cards where did in %s and queue = {QUEUE_TYPE_REV} and due <= ? l
         )
 
     def answerButtons(self, card: Card) -> int:
-        return 4
+        return 2
 
     # legacy in v3 but used by unit tests; redefined in v2/v1
 
