@@ -51,7 +51,7 @@ impl BackendAnkiwebService for Backend {
         if enabled {
             self.post("desktop/check-for-update", input)
         } else {
-            Err(AnkiError::UpdateCheckDisabled)
+            Err(AnkiError::Interrupted)
         }
     }
 }
