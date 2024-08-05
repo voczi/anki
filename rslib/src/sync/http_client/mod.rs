@@ -42,7 +42,7 @@ impl HttpSyncClient {
             client,
             endpoint: auth
                 .endpoint
-                .unwrap_or_else(|| Url::try_from("https://sync.ankiweb.net/").unwrap()),
+                .unwrap_or_else(|| Url::try_from("https://localhost:0/").unwrap()),
             io_timeout,
         }
     }

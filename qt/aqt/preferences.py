@@ -261,6 +261,9 @@ class Preferences(QDialog):
         self.form.minimalist_mode.setChecked(self.mw.pm.minimalist_mode())
         qconnect(self.form.minimalist_mode.stateChanged, self.mw.pm.set_minimalist_mode)
 
+        self.form.enable_update_check.setChecked(self.mw.pm.enable_update_check())
+        qconnect(self.form.enable_update_check.stateChanged, self.mw.pm.set_update_check)
+
         self.form.spacebar_rates_card.setChecked(self.mw.pm.spacebar_rates_card())
         qconnect(
             self.form.spacebar_rates_card.stateChanged,

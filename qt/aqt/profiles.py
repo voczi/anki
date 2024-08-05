@@ -533,10 +533,16 @@ create table if not exists profiles
 
     def minimalist_mode(self) -> bool:
         return self.meta.get("minimalist_mode", False)
+    
+    def enable_update_check(self) -> bool:
+        return self.meta.get("enable_update_check", False)
 
     def set_minimalist_mode(self, on: bool) -> None:
         self.meta["minimalist_mode"] = on
         gui_hooks.body_classes_need_update()
+
+    def set_update_check(self, on: bool) -> None:
+        self.meta["enable_update_check"] = on
 
     def spacebar_rates_card(self) -> bool:
         return self.meta.get("spacebar_rates_card", True)

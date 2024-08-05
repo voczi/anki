@@ -43,6 +43,7 @@ preferences-theme-dark = Dark
 preferences-v3-scheduler = V3 scheduler
 preferences-auto-refresh = Automatically refresh browser
 preferences-auto-refresh-tooltip = Refresh the card browser whenever a new note is added. Might cause performance issues.
+preferences-enable-update-check = Enable checking for program updates
 preferences-ignore-accents-in-search = Ignore accents in search (slower)
 preferences-backup-explanation =
     Anki periodically backs up your collection. After backups are more than 2 days old,

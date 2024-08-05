@@ -46,7 +46,13 @@ impl BackendAnkiwebService for Backend {
     }
 
     fn check_for_update(&self, input: CheckForUpdateRequest) -> Result<CheckForUpdateResponse> {
-        self.post("desktop/check-for-update", input)
+        let enabled = self.with_col(|col| Ok(Collection::get_config_bool(col, BoolKey::EnableUpdateCheck))).unwrap();
+
+        if enabled {
+            self.post("desktop/check-for-update", input)
+        } else {
+            Err(AnkiError::UpdateCheckDisabled)
+        }
     }
 }
 
