@@ -55,7 +55,7 @@ export function renderSimulationChart(
 
     const x = scaleTime()
         .domain([xMin, xMax!])
-        .range([bounds.marginLeft, bounds.width - bounds.marginRight]);
+        .range([bounds.marginLeft, bounds.width - (bounds.marginRight * 1.5)]);
     const formatDate = timeFormat("%Y-%m-%d");
 
     svg.select<SVGGElement>(".x-ticks")
@@ -189,13 +189,13 @@ export function renderSimulationChart(
         .on("click", (event, d) => toggleGroup(event, d));
 
     legend.append("rect")
-        .attr("x", bounds.width - bounds.marginRight + 10)
+        .attr("x", bounds.width - bounds.marginRight - 30)
         .attr("width", 19)
         .attr("height", 19)
         .attr("fill", (d, i) => color[i % color.length]);
 
     legend.append("text")
-        .attr("x", bounds.width - bounds.marginRight + 34)
+        .attr("x", bounds.width - bounds.marginRight - 4)
         .attr("y", 9.5)
         .attr("dy", "0.32em")
         .text(d => `Simulation ${d}`);
